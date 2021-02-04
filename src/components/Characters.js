@@ -69,24 +69,3 @@ export default function Characters() {
     </section>
   </main>
 }
-// {
-//   characters.filter(character => {
-//     return character.category.includes('Breaking Bad')
-//   }).map(character => {
-//     return <div key={character.char_id}>
-//       <Link key={character.char_id} to={`/project-2/characters/${character.char_id}`}>
-//         <p>Name: {character.name}</p>
-//         <img
-//           src={character.char_id === 39 ?
-//             'https://i.imgur.com/g9PdgRf.png'
-//             : `${character.img}`}
-//           alt={`${character.name}`}
-//         />
-//       </Link>
-//       <p>Nickname: {character.nickname}</p>
-//       <p>Occupation: {character.occupation.join(' , ')}</p>
-//       <p>Status: {character.status}</p>
-//       <p>Cast: {character.portrayed}</p>
-//     </div>
-//   })
-// }

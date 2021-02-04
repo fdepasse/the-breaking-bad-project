@@ -12,13 +12,13 @@ export default function Header() {
           </Link>
         </div>
       </div>
-      <div className="navbar-menu">
+      <div className="navbar-menu is-active">
         <div className="navbar-end">
           <div className="navbar-item">
-            <Link to={'/project-2/characters'}>Characters</Link>
+            <Link className="button is-light is-small has-text-weight-bold is-outlined" to={'/project-2/characters'}>Characters</Link>
           </div>
           <div className="navbar-item">
-            <Link to={'/project-2/episodes'}>Episodes</Link>
+            <Link className="button is-light is-small has-text-weight-bold is-outlined" to={'/project-2/episodes'}>Episodes</Link>
           </div>
         </div>
       </div>

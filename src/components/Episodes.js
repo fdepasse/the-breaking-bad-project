@@ -95,11 +95,10 @@ export default function Episodes() {
               </figure>
             </div>
             <div className="media-content " >
-              <p className="title is-4 pb-5 ">Season : {episode.season} Episode: {episode.episode} </p>
-              {/* <p className="subtitle is-6  "> Season : {episode.season}</p> */}
-              <p className="subtitle is-6 py-2">Title: {episode.title}</p>
-              <p className="subtitle is-6  pb-2">Air Date: {episode.air_date}</p>
-              <p className="subtitle is-6  pb-6">Cast:{episode.characters.join(' , ')}</p>
+              <p className="title is-4 pb-5 ">Season {episode.season} - Episode {episode.episode} </p>
+              <p className="subtitle is-6 py-2 has-text-weight-bold">Title: <span className="has-text-weight-normal">{episode.title}</span></p>
+              <p className="subtitle is-6  pb-2 has-text-weight-bold">Air Date: <span className="has-text-weight-normal">{episode.air_date}</span></p>
+              <p className="subtitle is-6  pb-6 has-text-weight-bold">Characters: <span className="has-text-weight-normal">{episode.characters.join(' , ')}</span></p>
             </div>
           </div>
           <div className="content">
