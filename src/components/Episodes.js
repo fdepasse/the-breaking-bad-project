@@ -1,10 +1,7 @@
-
 import axios from 'axios'
-// import { Link } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 
 export default function Episodes() {
-
   const [episodes, updateEpisodes] = useState([])
 
   useEffect(() => {
@@ -13,9 +10,16 @@ export default function Episodes() {
         updateEpisodes(resp.data)
       })
   }, [])
-  console.log(episodes)
-
-  return <div>Episodes Page</div>
-
-
+  return <div>
+    {episodes.map((episode, i) => {
+      return <div key={i}>
+        <h4>{episode.title}</h4>
+        <h4>{episode.air_date}</h4>
+        <h4>{episode.season}</h4>
+        <h4>{episode.episode}</h4>
+        <p>{episode.characters.join(' , ')}</p>
+      </div>
+    }
+    )}
+  </div>
 }

@@ -16,7 +16,7 @@ export default function App() {
   return <BrowserRouter>
     <Nav />
     <Switch>
-      <Route exact path="/project-2/home" component={Home} />
+      <Route exact path="/project-2" component={Home} />
       <Route exact path="/project-2/characters" component={Characters} />
       <Route exact path="/project-2/characters/:id" component={Character} />
       <Route exact path="/project-2/episodes" component={Episodes} />
