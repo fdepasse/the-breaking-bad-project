@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 
@@ -21,18 +22,40 @@ export default function Character({ match }) {
   }
 
   return <main>
-    <div>
-      <p>Name: {character.name}</p>
-      <img
-        src={character.char_id === 39 ?
-          'https://i.imgur.com/g9PdgRf.png'
-          : `${character.img}`}
-        alt={`${character.name}`}
-      />
-      <p>Nickname: {character.nickname}</p>
-      <p>Occupation: {character.occupation.join(' , ')}</p>
-      <p>Status: {character.status}</p>
-      <p>Cast: {character.portrayed}</p>
+    <div className="modal is-active">
+      <div className="modal-background">
+      </div>
+      <div className="modal-content">
+        {/* <!-- Any other Bulma elements you want --> */}
+        <div className="card">
+          <div className="card-image">
+            <figure className="image is-3by4">
+              <img src={character.char_id === 39 ?
+                'https://i.imgur.com/g9PdgRf.png'
+                : `${character.img}`} alt={`${character.name}`} />
+            </figure>
+          </div>
+          <div className="card-content">
+            <div className="media">
+              <div className="media-content">
+                <p className="title is-3">{character.name}</p>
+                <p className="subtitle is-6">aka: {character.nickname}</p>
+              </div>
+            </div>
+            <div className="content">
+              <p className="is-size-6 has-text-weight-bold">Occupation: <span className="has-text-weight-normal">{character.occupation.join(' , ')}</span>
+              </p>
+              <p className="is-size-6 has-text-weight-bold">Status: <span className="has-text-weight-normal">{character.status}</span>
+              </p>
+              <p className="is-size-6 has-text-weight-bold">Cast: <span className="has-text-weight-normal">{character.portrayed}</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <Link to={'/project-2/characters'}>
+        <button className="modal-close is-large" aria-label="close"></button>
+      </Link>
     </div>
   </main>
 }

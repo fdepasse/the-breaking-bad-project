@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import Nav from './components/Nav'
+import Header from './components/Header'
 import Home from './components/Home'
 import Characters from './components/Characters'
 import Character from './components/Character'
@@ -14,7 +14,7 @@ import './styles/style.scss'
 
 export default function App() {
   return <BrowserRouter>
-    <Nav />
+    <Header />
     <Switch>
       <Route exact path="/project-2" component={Home} />
       <Route exact path="/project-2/characters" component={Characters} />
