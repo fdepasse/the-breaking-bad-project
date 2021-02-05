@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function Header() {
 
-  return <header>
+  return <header id="home">
     <nav className="navbar has-background-primary" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <div className="navbar-item">

@@ -36,8 +36,8 @@ export default function Characters() {
       />
     </section>
 
-    <section className="section has-background-primary" id="card-section">
-      <div className="columns is-multiline is-centered">
+    <section className="section" id="card-section">
+      <div className="columns is-multiline is-centered has-background-primary">
         {characters.filter(character => {
           return character.category.includes('Breaking Bad')
         }).map(character => {

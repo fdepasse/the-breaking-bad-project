@@ -37,6 +37,7 @@ export default function Home() {
     </section>
 
     <section className="section mb-6" id="trailer">
+      <a className="button is-small is-primary mb-3" href="#home">Back to top</a>
       <div className="player-wrapper">
         <ReactPlayer
           className="react-player"
@@ -46,8 +47,9 @@ export default function Home() {
       </div>
     </section>
 
-    <section className="section has-background-primary" id="gallery">
-      <div className="columns is-multiline is-centered">
+    <section className="section" id="gallery">
+      <a className="button is-small is-primary mb-5" href="#home">Back to top</a>
+      <div className="columns is-multiline is-centered has-background-primary">
         {gallery.map((image, i) => {
           return <div key={i} className="column is-one-quarter-desktop is-one-third-tablet is-full-mobile">
             <div className="card">
