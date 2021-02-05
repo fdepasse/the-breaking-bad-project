@@ -74,38 +74,45 @@ export default function Episodes() {
       })
   }, [])
   return <main>
-    <label>Select a season</label>
-    <select onChange={(event) => updateSeason(event.target.value)}>
-      <option value='All'>All</option>
-      <option value='1'>Season 1</option>
-      <option value='2'>Season 2</option>
-      <option value='3'>Season 3</option>
-      <option value='4'>Season 4</option>
-      <option value='5'>Season 5</option>
-    </select>
-    {episodes.filter((episode) => {
-      return 'All' === season || episode.season === season
-    }).map((episode, i) => {
-      return <div key={i} className="card">
-        <div className="card-content">
-          <div className="media">
-            <div className="media-left">
-              <figure className=" image is-128x128">
-                <img src={images[episode.episode_id]} alt="" />
-              </figure>
+
+    <section className="section">
+      <h1 className="title">Episodes List</h1>
+    </section>
+
+    <section className="section">
+      <label>Select a season</label>
+      <select onChange={(event) => updateSeason(event.target.value)}>
+        <option value='All'>All</option>
+        <option value='1'>Season 1</option>
+        <option value='2'>Season 2</option>
+        <option value='3'>Season 3</option>
+        <option value='4'>Season 4</option>
+        <option value='5'>Season 5</option>
+      </select>
+    </section>
+    <section className="section has-background-primary">
+      {episodes.filter((episode) => {
+        return 'All' === season || episode.season === season
+      }).map((episode, i) => {
+        return <div key={i} className="card my-3">
+          <div className="card-content py-5">
+            <div className="media">
+              <div className="media-left">
+                <figure className="image is-128x128">
+                  <img src={images[episode.episode_id]} alt={`${episode.episode_id}`}/>
+                </figure>
+              </div>
+              <div className="media-content" >
+                <p className="title is-6 pb-4">Season {episode.season} - Episode {episode.episode} </p>
+                <p className="subtitle is-7 has-text-weight-bold pb-2">Title: <span className="has-text-weight-normal">{episode.title}</span></p>
+                <p className="subtitle is-7 has-text-weight-bold pb-5">Air Date: <span className="has-text-weight-normal">{episode.air_date}</span></p>
+                <p className="subtitle is-7 has-text-weight-bold pb-4">Characters: <span className="has-text-weight-normal">{episode.characters.join(' , ')}</span></p>
+              </div>
             </div>
-            <div className="media-content " >
-              <p className="title is-4 pb-5 ">Season {episode.season} - Episode {episode.episode} </p>
-              <p className="subtitle is-6 py-2 has-text-weight-bold">Title: <span className="has-text-weight-normal">{episode.title}</span></p>
-              <p className="subtitle is-6  pb-2 has-text-weight-bold">Air Date: <span className="has-text-weight-normal">{episode.air_date}</span></p>
-              <p className="subtitle is-6  pb-6 has-text-weight-bold">Characters: <span className="has-text-weight-normal">{episode.characters.join(' , ')}</span></p>
-            </div>
-          </div>
-          <div className="content">
           </div>
         </div>
-      </div>
-    }
-    )}
+      }
+      )}
+    </section>
   </main >
 }

@@ -36,7 +36,7 @@ export default function Characters() {
       />
     </section>
 
-    <section className="section">
+    <section className="section has-background-primary" id="card-section">
       <div className="columns is-multiline is-centered">
         {characters.filter(character => {
           return character.category.includes('Breaking Bad')
@@ -58,7 +58,7 @@ export default function Characters() {
                   </div>
                 </div>
                 <div className="content">
-                  <Link to={`/project-2/characters/${character.char_id}`} className="is-size-6">Find out more...</Link>
+                  <Link to={`/project-2/characters/${character.char_id}`} className="is-size-7">Find out more...</Link>
                 </div>
               </div>
             </div>

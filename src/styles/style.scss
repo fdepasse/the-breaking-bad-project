@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 // Font
+@import url('https://fonts.googleapis.com/css2?family=Cutive&display=swap');
 
 // Breaking Bad Colour Scheme
 $darker-green: #032202;
@@ -10,8 +11,14 @@ $light-green: #29773e;
 $lighter-green: #369457;
 
 // Update Bulma's global variables
-// $family-sans-serif:
+$family-sans-serif: "Cutive", serif;
 $primary: $lighter-green;
+$link: $primary;
 
 // Import what you need from Bulma
 @import "../../node_modules/bulma/bulma.sass";
+
+select{
+  padding: 5px;
+  margin: 0 5px;
+}

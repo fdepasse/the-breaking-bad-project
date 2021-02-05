@@ -18,7 +18,9 @@ export default function Character({ match }) {
   }, [])
 
   if (loading) {
-    return <h1>Loading in progress...</h1>
+    return <section className="section">
+      <p>Loading in progress...</p>
+    </section>
   }
 
   return <main>
@@ -26,7 +28,6 @@ export default function Character({ match }) {
       <div className="modal-background">
       </div>
       <div className="modal-content">
-        {/* <!-- Any other Bulma elements you want --> */}
         <div className="card">
           <div className="card-image">
             <figure className="image is-3by4">
