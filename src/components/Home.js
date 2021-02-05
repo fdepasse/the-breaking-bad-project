@@ -1,28 +1,41 @@
 import React from 'react'
 import ReactPlayer from 'react-player/youtube'
+import gallery1 from '../images/gallery1.jpg'
+import gallery2 from '../images/gallery2.jpg'
+import gallery3 from '../images/gallery3.jpg'
+import gallery4 from '../images/gallery4.jpg'
+import gallery5 from '../images/gallery5.jpg'
+import gallery6 from '../images/gallery6.jpg'
+import gallery7 from '../images/gallery7.jpg'
+import gallery8 from '../images/gallery8.jpg'
+import gallery9 from '../images/gallery9.jpg'
+import gallery10 from '../images/gallery10.jpg'
+import gallery11 from '../images/gallery11.jpg'
+import gallery12 from '../images/gallery12.jpg'
+import logo from '../images/logo.png'
 
 
 export default function Home() {
 
   const gallery = [
-    '../images/gallery1.jpg',
-    '../images/gallery2.jpg',
-    '../images/gallery3.jpg',
-    '../images/gallery4.jpg',
-    '../images/gallery5.jpg',
-    '../images/gallery6.jpg',
-    '../images/gallery7.jpg',
-    '../images/gallery8.jpg',
-    '../images/gallery9.jpg',
-    '../images/gallery10.jpg',
-    '../images/gallery11.jpg',
-    '../images/gallery12.jpg'
+    gallery1,
+    gallery2,
+    gallery3,
+    gallery4,
+    gallery5,
+    gallery6,
+    gallery7,
+    gallery8,
+    gallery9,
+    gallery10,
+    gallery11,
+    gallery12
   ]
 
   return <main>
     <section className="section">
       <div className="has-text-centered my-6">
-        <img src={'../images/logo.png'} alt='Breaking Bad Logo' width="35%" />
+        <img src={logo} alt='Breaking Bad Logo' width="35%" />
       </div>
       <div className="buttons are-small">
         <a className="button is-primary mx-1" href="#trailer">Trailer</a>
@@ -51,6 +64,7 @@ export default function Home() {
       <a className="button is-small is-primary mb-5" href="#home">Back to top</a>
       <div className="columns is-multiline is-centered has-background-info">
         {gallery.map((image, i) => {
+          console.log(image)
           return <div key={i} className="column is-one-quarter-desktop is-one-third-tablet is-full-mobile">
             <div className="card">
               <div className="card-image">
