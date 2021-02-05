@@ -13,7 +13,10 @@ export default function Home() {
     '../images/gallery6.jpg',
     '../images/gallery7.jpg',
     '../images/gallery8.jpg',
-    '../images/gallery9.jpg'
+    '../images/gallery9.jpg',
+    '../images/gallery10.jpg',
+    '../images/gallery11.jpg',
+    '../images/gallery12.jpg'
   ]
 
   return <main>
@@ -27,13 +30,13 @@ export default function Home() {
       </div>
     </section>
 
-    <section className="hero">
+    <section className="hero mb-6">
       <div className="hero-body has-background-primary">
         <img width={'100%'} src={'https://images.hdqwalls.com/download/breaking-bad-van-artwork-27-1920x1080.jpg'} alt='' />
       </div>
     </section>
 
-    <section className="section" id="trailer">
+    <section className="section mb-6" id="trailer">
       <div className="player-wrapper">
         <ReactPlayer
           className="react-player"
@@ -43,7 +46,7 @@ export default function Home() {
       </div>
     </section>
 
-    <section className="section">
+    <section className="section has-background-primary" id="gallery">
       <div className="columns is-multiline is-centered">
         {gallery.map((image, i) => {
           return <div key={i} className="column is-one-quarter-desktop is-one-third-tablet is-full-mobile">
