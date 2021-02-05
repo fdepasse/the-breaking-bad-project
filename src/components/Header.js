@@ -8,7 +8,7 @@ export default function Header() {
     <nav className="navbar has-background-primary" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <div className="navbar-item">
-          <Link to={'/project-2'}>
+          <Link to={'/project-2/'}>
             <img src={navbaricon} />
           </Link>
         </div>
