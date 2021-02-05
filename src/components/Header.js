@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import navbaricon from '../images/icon-navbar.png'
 
 export default function Header() {
 
@@ -8,7 +9,7 @@ export default function Header() {
       <div className="navbar-brand">
         <div className="navbar-item">
           <Link to={'/project-2'}>
-            <img src="../images/icon-navbar.png" />
+            <img src={navbaricon} />
           </Link>
         </div>
         <div className="navbar-item">
