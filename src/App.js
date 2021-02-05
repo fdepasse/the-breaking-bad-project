@@ -6,6 +6,7 @@ import Home from './components/Home'
 import Characters from './components/Characters'
 import Character from './components/Character'
 import Episodes from './components/Episodes'
+import Footer from './components/Footer'
 
 import 'bulma'
 import './styles/style.scss'
@@ -19,5 +20,6 @@ export default function App() {
       <Route exact path="/project-2/characters/:id" component={Character} />
       <Route exact path="/project-2/episodes" component={Episodes} />
     </Switch>
+    <Footer />
   </BrowserRouter>
 }

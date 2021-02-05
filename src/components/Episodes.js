@@ -92,7 +92,7 @@ export default function Episodes() {
     </section>
     
     <section className="section">
-      <div className="column has-background-primary">
+      <div className="column has-background-info">
         {episodes.filter((episode) => {
           return 'All' === season || episode.season === season
         }).map((episode, i) => {

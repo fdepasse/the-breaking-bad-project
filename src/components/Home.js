@@ -31,7 +31,7 @@ export default function Home() {
     </section>
 
     <section className="hero mb-6">
-      <div className="hero-body has-background-primary">
+      <div className="hero-body has-background-info">
         <img width={'100%'} src={'https://images.hdqwalls.com/download/breaking-bad-van-artwork-27-1920x1080.jpg'} alt='' />
       </div>
     </section>
@@ -49,7 +49,7 @@ export default function Home() {
 
     <section className="section" id="gallery">
       <a className="button is-small is-primary mb-5" href="#home">Back to top</a>
-      <div className="columns is-multiline is-centered has-background-primary">
+      <div className="columns is-multiline is-centered has-background-info">
         {gallery.map((image, i) => {
           return <div key={i} className="column is-one-quarter-desktop is-one-third-tablet is-full-mobile">
             <div className="card">
@@ -65,7 +65,4 @@ export default function Home() {
     </section>
 
   </main>
-
-  // Add tiles with pictures and quotes
-
 }
