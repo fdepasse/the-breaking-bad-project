@@ -11,6 +11,7 @@
 * [Getting Started](#getting-started)
 * [Project Brief](#brief)
 * [Technologies Used](#technologies)
+* [Team Responsibilities](#team)
 * [Approach](#approach)
 * [Enhancements](#enhancements)
 * [Wins, Challenges & Learnings](#wins-and-challenges)
@@ -30,6 +31,7 @@ It is a frontend application built with React JS and talking to a Public API, im
 
 
 <br/>
+
 
 ## <a name="getting-started"></a>Getting Started
 Click the "Code" button on the [repository](https://github.com/fdepasse/pacman-thriller) and choose either to **Clone** it or to **Download ZIP** the files.
@@ -72,6 +74,14 @@ Once the files are on your machine, from the directory they are saved run `npm i
 * Google Chrome Dev Tools
 * Zoom
 * Slack
+
+<br/>
+
+
+## <a name="team"></a>Team Responsibilities
+* Fabien Depasse
+* Abdi Osman
+
 
 <br/>
 
