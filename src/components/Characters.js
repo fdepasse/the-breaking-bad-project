@@ -58,7 +58,7 @@ export default function Characters() {
                   </div>
                 </div>
                 <div className="content">
-                  <Link to={`/project-2/characters/${character.char_id}`} className="is-size-7">Find out more...</Link>
+                  <Link to={`/characters/${character.char_id}`} className="is-size-7">Find out more...</Link>
                 </div>
               </div>
             </div>

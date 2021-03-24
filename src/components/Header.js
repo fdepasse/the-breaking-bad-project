@@ -10,7 +10,7 @@ export default function Header() {
     <nav className="navbar has-background-primary" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <div className="navbar-item">
-          <Link to={'/project-2/'}>
+          <Link to={'/'}>
             <img src={navbaricon} />
           </Link>
         </div>
@@ -30,10 +30,10 @@ export default function Header() {
           <div className="navbar-item">
             <Link
               className={`button ${burgerActive ? 'is-primary is-small has-text-weight-bold is-outlined' : 'is-light is-small has-text-weight-bold is-outlined'}`}
-              to={'/project-2/characters'}>Characters</Link>
+              to={'/characters'}>Characters</Link>
           </div>
           <div className="navbar-item">
-            <Link className={`button ${burgerActive ? 'is-primary is-small has-text-weight-bold is-outlined' : 'is-light is-small has-text-weight-bold is-outlined'}`} to={'/project-2/episodes'}>Episodes</Link>
+            <Link className={`button ${burgerActive ? 'is-primary is-small has-text-weight-bold is-outlined' : 'is-light is-small has-text-weight-bold is-outlined'}`} to={'/episodes'}>Episodes</Link>
           </div>
         </div>
       </div>

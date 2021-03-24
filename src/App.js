@@ -15,10 +15,10 @@ export default function App() {
   return <BrowserRouter>
     <Header />
     <Switch>
-      <Route exact path="/project-2" component={Home} />
-      <Route exact path="/project-2/characters" component={Characters} />
-      <Route exact path="/project-2/characters/:id" component={Character} />
-      <Route exact path="/project-2/episodes" component={Episodes} />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/characters" component={Characters} />
+      <Route exact path="/characters/:id" component={Character} />
+      <Route exact path="/episodes" component={Episodes} />
     </Switch>
     <Footer />
   </BrowserRouter>
