@@ -10,7 +10,7 @@ export default function Header() {
     <nav className="navbar has-background-primary" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <div className="navbar-item">
-          <Link to={'/'}>
+          <Link to={'/the-breaking-bad-project'}>
             <img src={navbaricon} />
           </Link>
         </div>
@@ -30,10 +30,10 @@ export default function Header() {
           <div className="navbar-item">
             <Link
               className={`button ${burgerActive ? 'is-primary is-small has-text-weight-bold is-outlined' : 'is-light is-small has-text-weight-bold is-outlined'}`}
-              to={'/characters'}>Characters</Link>
+              to={'/the-breaking-bad-project/characters'}>Characters</Link>
           </div>
           <div className="navbar-item">
-            <Link className={`button ${burgerActive ? 'is-primary is-small has-text-weight-bold is-outlined' : 'is-light is-small has-text-weight-bold is-outlined'}`} to={'/episodes'}>Episodes</Link>
+            <Link className={`button ${burgerActive ? 'is-primary is-small has-text-weight-bold is-outlined' : 'is-light is-small has-text-weight-bold is-outlined'}`} to={'/the-breaking-bad-project/episodes'}>Episodes</Link>
           </div>
         </div>
       </div>

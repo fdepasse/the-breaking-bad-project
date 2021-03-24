@@ -55,7 +55,7 @@ export default function Character({ match }) {
             </div>
           </div>
         </div>
-        <Link to={'/characters'}>
+        <Link to={'/the-breaking-bad-project/characters'}>
           <button className="modal-close is-large" aria-label="close"></button>
         </Link>
       </div>
