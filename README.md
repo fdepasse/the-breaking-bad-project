@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-<p align="center"><img src="images/thriller-logo-small.png"></p>
+<p align="center"><img src="src/images/logo-small.png"></p>
 
 <br/><br/>
 
@@ -32,28 +32,9 @@ It is a frontend application built with React JS and talking to a Public API, im
 <br/>
 
 ## <a name="getting-started"></a>Getting Started
-You can either install the source code on your own machine or play the game online.
-
-### Run the Game on your Machine
-* Click the "Code" button on the [repository](https://github.com/fdepasse/pacman-thriller) and choose either to **Clone** it or to **Download ZIP** the files
-* Once the files are on your machine, open the index.html in the browser of your choice
-<p align="center"><img src="images/github.png"></p>
-
-
-### Play the Game Online
-* Visit this [link](https://fdepasse.github.io/pacman-thriller/)
-* Click the **Start Game** button to launch the game
-* Once all characters have appeared start moving Michael using the **top**, **right**, **down** and **left** arrow keys of your keyboard
-* Eat all dots and full moons to **win the game** while avoiding being caught by the zombies
-* When Michael lands on a **Full Moon** he will turn into a Werewolf for 10 seconds and will have the ability to eat zombies and score extra points
-* After reaching the 400 and 800 points markers a **Pop Corn** bonus worth 100 points will appear at a random location on the grid
-* You will **lose the game** if you lose your 3 lives
-* You can **reset** the game at any point by clicking the **Reset Game** button
-* Points system: **Dots** 10 points, **Moons** 50 points, **Pop Corn** 100 points, **Zombie** (during Full Moon Mode) 200 points
-
-<p align="center"><img src="images/navbar.png"></p>
-
-> In pure classic Pac-Man style, once you have initiated the first movement, Michael will automatically carry on moving in the same direction until you press another arrow key or he encounters a grave stone or a zombie
+Click the "Code" button on the [repository](https://github.com/fdepasse/pacman-thriller) and choose either to **Clone** it or to **Download ZIP** the files.
+<p align="center"><img src="src/images/github.png"></p>
+Once the files are on your machine, from the directory they are saved run `npm i` to install the dependencies from the package.json followed by `npm run serve` to start webpack dev server and see the app locally in your browser.
 
 <br/>
 

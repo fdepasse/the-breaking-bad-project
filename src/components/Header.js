@@ -10,7 +10,7 @@ export default function Header() {
     <nav className="navbar has-background-primary" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <div className="navbar-item">
-          <Link to={'/the-breaking-bad-project'}>
+          <Link to={'/the-breaking-bad-project/'}>
             <img src={navbaricon} />
           </Link>
         </div>
