@@ -135,7 +135,7 @@ const debouncedSave = debounce((query, updateCharacters) => {
 ```
 > `_.debounce(func, [wait=0], [options={}])` is a special function from the Lodash library. It delays invoking a function (func) after a period in ms (wait) starting from the last time it has been invoked. In our case, it is avoiding the user making a request to the API each time a letter is entered in the search bar.
 
-* We got an array back from the API which we first filtered on the frontend to only be characters from Breaking Bad (API also covers Better Call Saul Series) and second we mapped over each characters to display them as cards using Bulma classes.
+We got an array back from the API which we first filtered on the frontend to only be characters from Breaking Bad (API also covers Better Call Saul Series) and second we mapped over each characters to display them as cards using Bulma classes.
 
 ```
 {characters.filter(character => {
@@ -147,6 +147,7 @@ const debouncedSave = debounce((query, updateCharacters) => {
 })
 ```
 <br/>
+
 *Characters Page*
 <p><img align="center" src="src/images/characters.png"</p>
 
@@ -190,6 +191,7 @@ With the id available in our single `Character` component, we udpate the URL of 
 ```
 
 <br/>
+
 *Single Character*
 <p><img align="center" src="src/images/single-character.png"</p>
 
@@ -225,6 +227,7 @@ Now when rendering the page, we filter episodes data we got back from the API to
 ```
 
 <br/>
+
 *Episodes*
 <p><img align="center" src="src/images/episodes.png"</p>
 
