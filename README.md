@@ -59,7 +59,7 @@ Once the files are on your machine, from the directory they are saved run `npm i
 * Bulma
 * Sass
 * Google Fonts
-* Node JS
+* Node.js
 * Webpack
 * NPM
 * Axios
@@ -74,33 +74,39 @@ Once the files are on your machine, from the directory they are saved run `npm i
 * Zoom
 * Slack
 
+### API
+* [The Breaking Bad API](https://breakingbadapi.com/documentation)
+
 <br/>
 
 
 ## <a name="team"></a>Team Responsibilities
-* [Fabien Depasse](https://github.com/fdepasse): Characters, Character and Header components, Home hero banner and navigation links 
-* [Abdi Osman](https://github.com/aozzy): Characters Search Bar, Episodes and Footer Components, Home page Video Player and Gallery
+* [Fabien Depasse](https://github.com/fdepasse): Characters, Character and Header components, Home page hero section
+* [Abdi Osman](https://github.com/aozzy): Characters Search Bar, Episodes and Footer Components, Home page video player and gallery
 
 
 <br/>
 
 ## <a name="approach"></a>Approach
-### Step 1: Whiteboarding & API End Points
+### Step 1: Whiteboarding
 
 
-#### Problem #1: Deciding the App Functionalities
+#### Problem #1: Deciding on our App Functionalities
 
-Looking at API End Points and Data Available, decided we wanted to display all characters, show more details on a particular character, support a search function, showing episodes list by season
+After looking at API End Points and understanding the data available, we decided on the below features: 
 
-Also understood limit of API and for the homepage we decided to curate images and videos to complement the API data
+* Browsing all characters from the series and getting some information about them
+* Searching characters
+* Broswing all episodes from the series and filtering by season
 
+We also wanted to be able to play a trailer and display a gallery of images from our homepage.
 
 <br/>
 
-#### Problem #2: Deciding on the design of the app
-Whiteboarded the pages we needed and which API endpoint will be needed on each
-Which functions will be needed for each with pseudo code.
-Routes in the front end with the react router
+#### Problem #2: Deciding on the UI
+We whiteboarded the pages we wanted to display from a UI point of view. From there, we have broken down the project into React Components to build. For each of the component, we indicated where we would need the API endpoints we chose. Finally we decided on the navigation between pages with React Router. 
+
+<p><img align="center" src="src/images/whiteboard.png"</p>
 
 <br/>
 
@@ -110,30 +116,133 @@ Routes in the front end with the react router
 
 
 #### Problem #1: Displaying all characters and being able to search them
-* Using search end points and chginf the URL with a debounce function
-* What's the debounce function
-* Store the data in state
-* Filtering and mapping to display
+We stored in state the **characters data** returned from our API and the **search input** from the user because we expect to re render our page each time these change.
+ 
+```
+const [characters, updateCharacters] = useState([])
+const [filter, updateFilter] = useState('')
+```
+
+When the component mounts, a `useEffect` hook calls `debouncedSave(filter, updateCharacters)` function. The function takes a `query` argument which is the search input from the user we have stored in state. We use the `query` to update the end point URL and make a request to the API for the relevant characters. We passed `updateCharacters` to the function so we could call it and pass the data returned from the API to it, meaning the result of the search is now stored in state `character`. 
+
+```
+const debouncedSave = debounce((query, updateCharacters) => {
+  axios.get(`https://www.breakingbadapi.com/api/characters?name=${query}`)
+    .then(resp => {
+      updateCharacters(resp.data)
+    })
+}, 500)
+```
+> `_.debounce(func, [wait=0], [options={}])` is a special function from the Lodash library. It delays invoking a function (func) after a period in ms (wait) starting from the last time it has been invoked. In our case, it is avoiding the user making a request to the API each time a letter is entered in the search bar.
+
+* We got an array back from the API which we first filtered on the frontend to only be characters from Breaking Bad (API also covers Better Call Saul Series) and second we mapped over each characters to display them as cards using Bulma classes.
+
+```
+{characters.filter(character => {
+          return character.category.includes('Breaking Bad')
+        }).map(character => {
+          return <div key={character.char_id} className="column is-one-quarter-desktop is-one-third-tablet is-full-mobile">
+            <div className="card">
+...
+})
+```
+<br/>
+*Characters Page*
+<p><img align="center" src="src/images/characters.png"</p>
+
+<br/>
+
+*Searching*
+<p><img align="center" src="src/images/search.png"</p>
 
 <br/>
 
 #### Problem #2: Showing more info about one particular character from the characters page
-* Passing id via match react router
-* Calling the API
-* Store character in state
+When the user clicks "Find out more..." on one of the characters' card, the `Character` component mounts and renders on the page, displaying more information about the character to the user. To achieve so, we used the react-router `<Link/>` feature. Each character card has a `<Link/>` with a path leading to the individual `Character` component. Part of this path is dynamic and holds the id of the character. 
 
-> Could have passed as props but didn't want to rely on the previous page
+```
+}).map(character => {
+   ...
+<Link to={`/the-breaking-bad-project/characters/${character.char_id}`} className="is-size-7">Find out more...</Link>
+...
+})
+```  
+
+The `<Link/>` feature comes with a `match` object which contains information about how our link matched the URL of the single character page: in our case the id. The dynamic segment of the path is stored under a property of the match object called `params`. We then passed `match` as props to the `Character` component to access the character id on the other side.
+
+```
+export default function Character({ match }) {
+  const id = match.params.id
+...
+  }
+```
+
+With the id available in our single `Character` component, we udpate the URL of our API end point and make a request for the relevant character in a `useEffect` hook when the component mounts. We then store the character data in state and can use it to display it on the page.
+
+```
+  useEffect(() => {
+    axios.get(`https://www.breakingbadapi.com/api/characters/${id}`)
+      .then(resp => {
+        updateCharacter(resp.data[0])
+        updateLoading(false)
+      })
+  }, [])
+```
+
+<br/>
+*Single Character*
+<p><img align="center" src="src/images/single-character.png"</p>
+
+<br/>
 
 #### Problem #3: Displaying all episodes by season
-* Getting the data when the component mounts
-* Storing data in state
-* Storing Season in state
-* Filtering on the front end
+When the components mount a request to the API end point is made in a `useEffect` hook which returns all the episodes in an array. We store this array in state: `episodes`. Next we have an `onChange` event listener on the the `select` list which stores the season selected by the use in state `season`. 
+
+```
+    <section className="section">
+      <label>Select a season</label>
+      <select onChange={(event) => updateSeason(event.target.value)}>
+        <option value='All'>All</option>
+        <option value='1'>Season 1</option>
+        <option value='2'>Season 2</option>
+        <option value='3'>Season 3</option>
+        <option value='4'>Season 4</option>
+        <option value='5'>Season 5</option>
+      </select>
+    </section>
+```
+
+Now when rendering the page, we filter episodes data we got back from the API to match the season selected by the user or we display all episodes if 'All' is selected.
+
+```
+        {episodes.filter((episode) => {
+          return 'All' === season || episode.season === season
+        }).map((episode, i) => {
+          return <div key={i} className="card my-4">
+...
+        }
+        )}
+```
+
+<br/>
+*Episodes*
+<p><img align="center" src="src/images/episodes.png"</p>
+
+<hr/>
+
+<br/>
+
+### Step 3: Styling
+We mainly used the CSS framework Bulma for our app styling. However we also used Sass to create color variables and customise the default Bulma values so we could render our Breaking Bad colour palette.
+
+<br/>
 
 ## <a name="enhancements"></a>Enhancements
 ### Potential Future Enhancements
 * Add a carousel instead of the gallery
 * Add pagination for the characters
+
+
 
 <br/>
 
