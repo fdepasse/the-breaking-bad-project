@@ -34,7 +34,7 @@ It is a frontend application built with React JS and talking to a Public API, im
 
 
 ## <a name="getting-started"></a>Getting Started
-Click the "Code" button on the [repository](https://github.com/fdepasse/pacman-thriller) and choose either to **Clone** it or to **Download ZIP** the files.
+Click the "Code" button on the [repository](https://github.com/fdepasse/the-breaking-bad-project) and choose either to **Clone** it or to **Download ZIP** the files.
 
 <p align="center"><img src="src/images/github.png"></p>
 
