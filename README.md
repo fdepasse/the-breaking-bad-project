@@ -38,7 +38,7 @@ Click the "Code" button on the [repository](https://github.com/fdepasse/the-brea
 
 <p align="center"><img src="src/images/github.png"></p>
 
-Once the files are on your machine, from the directory they are saved run `npm i` to install the dependencies from the **package.json** followed by `npm run serve` to start webpack dev server and see the app locally in your browser.
+You need to install [Node.js](https://nodejs.org/en/) to be able to proceed with the rest of the steps. Once installed and the repository files are on your machine, use your Command Line Interface (CLI) to navigate to the project directory. At the root, run `npm i` to install the dependencies from the **package.json** followed by `npm run serve` to start webpack dev server and see the app locally in your browser.
 
 <br/>
 
