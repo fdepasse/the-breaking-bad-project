@@ -90,7 +90,7 @@ You need to install [Node.js](https://nodejs.org/en/) to be able to proceed with
 <br/>
 
 ## <a name="approach"></a>Approach
-### Step 1: Whiteboarding
+### Step 1: White-boarding
 
 
 #### Problem #1: Deciding on our App Functionalities
