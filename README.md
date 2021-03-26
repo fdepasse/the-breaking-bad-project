@@ -99,14 +99,14 @@ After looking at API End Points and understanding the data available, we decided
 
 * Browsing all characters from the series and getting some information about them
 * Searching characters
-* Broswing all episodes from the series and filtering by season
+* Browsing all episodes from the series and filtering by season
 
 We also wanted to be able to play a trailer and display a gallery of images from our homepage.
 
 <br/>
 
 #### Problem #2: Deciding on the UI
-We whiteboarded the pages we wanted to display from a UI point of view. From there, we have broken down the project into React Components to build. For each of the component, we indicated where we would need the API endpoints we chose. Finally we decided on the navigation between pages with React Router. 
+We white-boarded the pages we wanted to display from a UI point of view. From there, we have broken down the project into React Components to build. For each of the component, we indicated where we would need the API endpoints we chose. Finally we decided on the navigation between pages with React Router. 
 
 <p><img align="center" src="src/images/whiteboard.png"</p>
 
@@ -180,7 +180,7 @@ export default function Character({ match }) {
   }
 ```
 
-With the id available in our single `Character` component, we udpate the URL of our API end point and make a request for the relevant character in a `useEffect` hook when the component mounts. We then store the character data in state and can use it to display it on the page.
+With the id available in our single `Character` component, we update the URL of our API end point and make a request for the relevant character in a `useEffect` hook when the component mounts. We then store the character data in state and can use it to display it on the page.
 
 ```
   useEffect(() => {
@@ -200,7 +200,7 @@ With the id available in our single `Character` component, we udpate the URL of 
 <br/>
 
 #### Problem #3: Displaying all episodes by season
-When the components mount a request to the API end point is made in a `useEffect` hook which returns all the episodes in an array. We store this array in state: `episodes`. Next we have an `onChange` event listener on the the `select` list which stores the season selected by the use in state `season`. 
+When the components mount a request to the API end point is made in a `useEffect` hook which returns all the episodes in an array. We store this array in state: `episodes`. Next we have an `onChange` event listener on the `select` list which stores the season selected by the use in state `season`. 
 
 ```
     <section className="section">
@@ -238,7 +238,7 @@ Now when rendering the page, we filter episodes data we got back from the API to
 <br/>
 
 ### Step 3: Styling
-We mainly used the CSS framework Bulma for our app styling. However we also used Sass to create color variables and customise the default Bulma values so we could render our Breaking Bad colour palette.
+We mainly used the CSS framework Bulma for our app styling. However we also used Sass to create colour variables and customise the default Bulma values so we could render our Breaking Bad colour palette.
 
 <br/>
 
@@ -254,7 +254,7 @@ We mainly used the CSS framework Bulma for our app styling. However we also used
 ## <a name="wins-and-challenges"></a>Wins, Challenges & Learnings
 ### Wins
 * Pair programming
-* Working with React and understanding the lyfecycle
+* Working with React and understanding the lifecycle
 * Using an API, dealing with the data returned
 * Building a search function
 * Structuring the code into components and passing properties between them
