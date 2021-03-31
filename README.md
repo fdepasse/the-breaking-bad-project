@@ -83,8 +83,8 @@ You need to install [Node.js](https://nodejs.org/en/) to be able to proceed with
 
 
 ## <a name="team"></a>Team Responsibilities
-* [Fabien Depasse](https://github.com/fdepasse): Characters, Character and Header components, Home page hero section
-* [Abdi Osman](https://github.com/aozzy): Characters Search Bar, Episodes and Footer Components, Home page video player and gallery
+* [Fabien Depasse](https://github.com/fdepasse): Characters, Character and Header components, homepage hero section
+* [Abdi Osman](https://github.com/aozzy): Characters Search Bar, Episodes and Footer Components, homepage video player and gallery
 
 
 <br/>
