@@ -267,4 +267,6 @@ We mainly used the CSS framework Bulma for our app styling. However we also used
 * Live Share not always easy to use depending on the Internet connection strength
 
 ### Learnings
-* Great way to consolidate the React knowledge acquired the previous 2 weeks of class
+* First time working as a group and it was great, it was great to be able to share ideas and code together
+* Using React and see its benefits (no DOM manipulation); it was great to be able to compare it with Vanilla JS along this project. It made me appreciate what React was doing and also understand what was going on under the hood of the library
+* Using a CSS framework for the first time Bulma. This is a great tool to get a great looking app however the customisation is limited and it adds a lot of extra lines of code in the HTML
